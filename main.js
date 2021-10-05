@@ -70,12 +70,13 @@ $(document).ready(function(){
 
           const accordionContainer = document.querySelector('.accordion-container')
           accordionContainer.addEventListener('click', (ev) => {
-        const parent = ev.target.parentNode;
+              const parent = ev.target.parentNode;
         for (let index = 0; index < accordions.length; index++) {
             let accordion = accordions[index]
+            const accordionHeaderContainer = accordion.querySelector('.accordion-header-container')
             const header = accordion.children[0]
             const panel = accordion.children[1]
-            if (accordion == parent) {
+            if (accordionHeaderContainer == ev.target || accordionHeaderContainer.contains(ev.target)) {
                     if (panel.classList.contains('active')) {
                         panel.classList.remove('active')
                         header.children[1].classList.remove('active')
@@ -88,8 +89,7 @@ $(document).ready(function(){
                 } else {
                     accordion.children[1].classList.remove('active')
                     header.children[1].classList.remove('active')
-                    
-                    
+
                 }
                 
             }
