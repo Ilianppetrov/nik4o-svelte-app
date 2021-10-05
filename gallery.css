@@ -1,0 +1,11 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px 0px
+}
+
+.gallery > li {
+    flex: 1;
+    margin-bottom: 20px;
+}
